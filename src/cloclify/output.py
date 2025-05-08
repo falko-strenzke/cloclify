@@ -15,7 +15,7 @@ import rich.table
 
 from cloclify import client
 
-DAY_TITLE_FORMAT = "%a, %Y-%m-%d (week %W)"
+DAY_TITLE_FORMAT = "%a, %Y-%m-%d (week %V)"
 
 
 def timedelta_str(delta):
