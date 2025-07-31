@@ -92,7 +92,7 @@ class Entry:
 
 class ClockifyClient:
 
-    API_URL = "https://api.clockify.me/api/v1"
+    API_URL = "https://euc1.clockify.me/api/v1" # TODO: MAKE CONFIGURABLE VIA ENV-VAR
 
     def __init__(self, debug: bool = False, workspace: str = None) -> None:
         self._debug = debug
@@ -180,6 +180,7 @@ class ClockifyClient:
         for proj in projects:
             self._projects_by_name[proj["name"]] = proj
             self._projects_by_id[proj["id"]] = proj
+        # print("_fetch_projects(): proj_by_name" + str(self._projects_by_name) )
 
     def _fetch_tags(self) -> None:
         tags = self._api_get(f"workspaces/{self._workspace_id}/tags")
